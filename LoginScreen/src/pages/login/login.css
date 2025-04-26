@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  background: url("img/background_1.jpg") center/cover no-repeat;
+  height: 100vh;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, #0b1d3d3f, #5778bb);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 0 10px #fff;
+  backdrop-filter: blur(25px);
+  overflow: hidden;
+  opacity: 0;
+  width: 250px;
+  height: 450px;
+  transition: width 0.45s ease-in-out, height 0.45s ease-in-out, opacity 0.45s ease-in-out;
+}
+
+.container.showing {
+  opacity: 1;
+  width: 850px;
+  height: 690px;
+}
+
+
+/* Area of Login and Signin */
+.loginArea,
+.signinArea {
+  width: 555px;
+  height: 690px;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  padding: 75px;
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.5s ease-in-out;
+}
+
+.loginArea h1,
+.signinArea h1 {
+  text-shadow: 0 0 10px rgb(0, 18, 78);
+}
+
+.loginArea {
+  transform: translateX(53%) translateY(10%);
+}
+
+.loginArea.hidden {
+  clip-path: inset(0 0 0 100%);
+}
+
+.signinArea.hidden {
+  clip-path: inset(0 100% 0 0);
+}
+
+/* Sidebar */
+.change {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(to top, #183a79, #011231);
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  border: 0 1px solid white;
+  box-shadow: 0 0 10px #fff;
+}
+
+.change h1 {
+  margin-top: 50px;
+  padding: 25px;
+  font-size: 35px;
+}
+
+.change h5 {
+  font-size: 15px;
+}
+
+.change button {
+  width: 150px;
+  height: 50px;
+}
+
+/* Copyrights Details */
+.copyright {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.logo {
+  width: 75px;
+}
+
+/* Sidebar Animations */
+#sideBarAnimation,
+#sideBarAnimation.right,
+#sideBarLogin,
+#sideBarLogin.hidden,
+#sideBarSignin,
+#sideBarSignin.hidden {
+  position: flex;
+  transition: opacity 0.25s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#sideBarAnimation {
+  transform: translateX(0);
+}
+
+#sideBarAnimation.right {
+  transform: translateX(185%);
+}
+
+#sideBarLogin,
+#sideBarSignin {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#sideBarLogin.hidden,
+#sideBarSignin.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Icon */
+.icon {
+  width: 25px;
+  height: 25px;
+  color: black;
+}
+
+/* Input */
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #183a79, #011231);
+  border: 2px solid rgba(255, 255, 255);
+  border-radius: 40px;
+  outline: none;
+  font-size: 16px;
+  color: white;
+  padding: 20px 45px 20px 20px;
+  transition: box-shadow 0.1s;
+}
+
+.input-box input:hover {
+  box-shadow: 0 0 10px #fff;
+}
+
+.input-box input::placeholder {
+  color: rgb(233, 233, 233);
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+/* Remember Forgot */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  margin: -15px 0 15px;
+  font-size: 14px;
+}
+
+.remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 5px;
+}
+
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+.remember-forgot input:hover {
+  box-shadow: 0 0 10px #fff;
+  transition: box-shadow 0.1s;
+}
+
+/* Button */
+.button {
+  width: 200px;
+  height: 50px;
+  background: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  color: rgb(59, 59, 59);
+  font-weight: 600;
+  margin: 25px 0 5px;
+  transition: background 0.4s, border 0.4s, color 0.4s, box-shadow 0.4s, backdrop-filter 0.4s;
+}
+
+.button:hover {
+  background: linear-gradient(45deg, #183a79, #011231);
+  border: 2px solid #fff;
+  color: #fff;
+  box-shadow: 0 0 10px #fff;
+  backdrop-filter: blur(100px);
+}
+
+/* Link de Registro */
+.register-link {
+  font-size: 14px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.register-link a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
